@@ -1,1 +1,54 @@
-﻿
+﻿.container {
+max-width: 1020px;
+margin-right: auto;
+margin-left: auto;
+}
+
+.logo {
+    display: inline;
+    color: white;
+    text-transform: uppercase;
+}
+
+#asterisk {
+    color: red;
+}
+
+a {
+   text-decoration: none;
+}
+
+.top-menu {
+    display: inline;
+}
+
+.top-menu a {
+    text-transform: uppercase;
+}
+
+a:hover {
+    color: red;
+}
+
+div nav {
+    display: inline;
+}
+
+.slider img {
+    position: absolute;
+}
+
+#slider-right-arrow {
+    left: 945px;
+    position: relative;
+}
+
+.left-arrow {
+    z-index: 1;
+}
+
+.left-arrow:hover,
+#slider-right-arrow:hover {
+    object-fit: cover;
+    opacity: 0.4;
+}
