@@ -1,65 +1,184 @@
-﻿.container {
-    max-width: 1020px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  
-  .logo-header {
-    width: 1020px;
-    height: 89px;
-    background-color: #2d303a;
-  }
-  
-  .logo {
-    font-size: 25px;
-    line-height: 6px;
-    color: #ffffff;
-    font-family: "Lato";
-    font-weight: 700;
-    text-align: left;
-  }
-  
-  .logo span {
-    color: red;
-  }
-  
-  .top-menu a {
-    font-size: 12px;
-    line-height: 6px;
-    font-family: "Lato";
-    font-weight: 700;
-    text-align: left;
-    text-decoration: none;
-  }
-  
-  div nav {
-    display: inline;
-  }
-  
-  a:hover {
-    color: #f06c64;
-  }
-  
-  .logo-bottom {
-    width: 1020px;
-    height: 6px;
-    background-color: #323746;
-  }
-  
-  .slider-main-background {
-    width: 1020px;
-    height: 600px;
-    background-color: #f06c64;
-  }
-  
-  .slider-bottom-background {
-    width: 1020px;
-    height: 15px;
-    background-color: #ea676b;
-  }
-  
-  .left-arrow:hover,
-  #slider-right-arrow:hover {
-    object-fit: cover;
-    opacity: 0.4;
-  }
+﻿body {
+  margin: 0;
+}
+
+.container {
+  max-width: 1020px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.logo-header {
+  width: 1020px;
+  height: 89px;
+  background-color: #2d303a;
+}
+
+.logo-icon {
+  padding-top: 25px;
+  padding-left: 30px;
+  text-transform: uppercase;
+}
+
+.logo {
+  font-size: 25px;
+  line-height: 6px;
+  color: #ffffff;
+  font-family: "Lato";
+  font-weight: 700;
+  text-align: left;
+}
+
+.logo span {
+  color: red;
+}
+
+.top-menu {
+  position: relative;
+  left: 60%;
+  top: -30%;
+}
+
+
+.top-menu a {
+  font-size: 12px;
+  line-height: 6px;
+  font-family: "Lato";
+  font-weight: 700;
+  text-align: left;
+  text-decoration: none;
+  color: white;
+}
+
+div nav {
+  display: inline;
+  margin-left: 35px;
+}
+
+a:hover {
+  color: #f06c64;
+}
+
+.logo-bottom {
+  width: 1020px;
+  height: 6px;
+  background-color: #323746;
+}
+
+.left-arrow {
+  position: absolute;
+  margin-left: 30px;
+  margin-top: 300px;
+}
+
+.iPhones {
+  position: relative;
+  left: 100px;
+  top: 70px;
+}
+
+.right-arrow {
+  position: relative;
+  top: -25%;
+  left: 170px;
+} 
+
+.slider-main-background {
+  width: 1020px;
+  height: 600px;
+  background-color: #f06c64;
+}
+
+.slider-bottom-background {
+  width: 1020px;
+  height: 15px;
+  background-color: #ea676b;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.ourservice-main-background { 
+  width: 1020px;
+  height: 495px;
+  padding-top: 70px;
+  background-color: #f2f2f2;
+}
+
+.ourservice header{
+  padding-left: 30px;
+  font-size: 30px;
+  line-height: 18px;
+  color: #666d89;
+  font-family: "Lato";
+  font-weight: 900;
+  text-align: left;
+}
+
+.ourservice p {
+  width: 940px;
+  height: 57px;
+  padding-left: 30px;
+  font-size: 18px;
+  line-height: 30px;
+  color: #767e9e;
+  font-family: "Lato";
+  font-weight: 300;
+  text-align: left;
+} 
+
+.items {
+  display: flex;
+}
+
+.columns-3x {
+  width: 33.3%;
+}
+
+.item {
+  margin: 25px; 
+}
+
+.ourservice-item-header {
+  position: relative;
+  left: 80px;
+  height: 20px;
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 18px;
+  color: #666d89;
+  font-family: "Lato";
+  font-weight: 900;
+  text-align: left;
+}
+
+.ourservice-item-text {
+  position: relative;
+  left: 80px;
+  width: 219px;
+  height: 128px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 22px;
+  color: #767e9e;
+  font-family: "Lato";
+  font-weight: 400;
+  text-align: left; 
+}
+
+.image-with-ellipse {
+  position: absolute;
+  width: 59px;
+  height: 59px;
+  border-radius: 29px;
+  border: 2px solid #666d89;
+}
+
+.ourservice-bottom-background {
+  width: 1020px;
+  height: 6px;
+  background-color: #ffffff;
+}

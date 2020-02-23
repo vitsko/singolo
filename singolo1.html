@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="./css/singolo1.css">
+  <link rel="stylesheet" href="./css/fonts.css">
   <title>Singolo. Part 1</title>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="logo-header">
-        <h1 class="logo">Singolo<span>*</span></h1>
+        <div class="logo-icon">
+          <h1 class="logo">Singolo<span>*</span></h1>
+        </div>
         <div class=top-menu>
           <nav><a>Home</a></nav>
           <nav><a>Service</a></nav>
@@ -23,16 +26,57 @@
     <section class="slider">
       <div class="slider-main-background">
         <img class="left-arrow" src="./assets/chevleft.png"/>
-        <img src="./assets/iPhones.png"/>
-        <img id="slider-right-arrow" src="./assets/chevright.png"/>
+        <img class="iPhones" src="./assets/iPhones.png"/>
+        <img class="right-arrow" src="./assets/chevright.png"/>
       </div>
       <div class="slider-bottom-background "></div>
     </section>
     <section class="ourservice">
-      <header>Our Service</header>
-      <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimmentum. 
+      <div class="ourservice-main-background">
+        <header>Our Service</header>
+        <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimmentum. 
         Duis mollis, non commodo luctus, nisi erat porttitor ligula,
          eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <div class="items">
+          <section class="columns-3x">
+            <div class="item">
+              <img class="image-with-ellipse" src="assets/pen.png">
+              <div class="ourservice-item-header">Custom Design</div>
+              <div class="ourservice-item-text">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</div>
+            </div>
+            <div class="item">
+              <img class="image-with-ellipse" src="assets/phone.png">
+              <div class="ourservice-item-header">Responsive Layout</div>
+              <div class="ourservice-item-text">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Praesent elit leo.</div>
+            </div>          
+          </section>
+          <section class="columns-3x">
+            <div class="item">
+              <img class="image-with-ellipse" src="assets/bulb.png">
+              <div class="ourservice-item-header">Inovative Ideas</div>
+              <div class="ourservice-item-text">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</div>
+            </div>
+            <div class="item">
+              <img class="image-with-ellipse" src="assets/bubble.png">
+              <div class="ourservice-item-header">24/7 Support</div>
+              <div class="ourservice-item-text">Vivamus vel quam lacinia, tincidunt dui non, vehicala nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem.</div>
+            </div>            
+          </section>
+          <section class="columns-3x">
+            <div class="item">
+              <img class="image-with-ellipse" src="assets/heart.png">
+              <div class="ourservice-item-header">Love Is The Ansver</div>
+              <div class="ourservice-item-text">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</div>
+            </div>
+            <div class="item">
+              <img class="image-with-ellipse" src="assets/star.png">
+              <div class="ourservice-item-header">Feel Like A Star</div>
+              <div class="ourservice-item-text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.</div>
+            </div>
+          </section>    
+        </div>
+      </div>
+      <div class="ourservice-bottom-background"></div>
     </section>
   </div>
 </body>
