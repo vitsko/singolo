@@ -1,83 +1,98 @@
 ﻿<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="./css/singolo1.css">
-  <link rel="stylesheet" href="./css/fonts.css">
-  <title>Singolo. Part 1</title>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div class="logo-header">
-        <div class="logo-icon">
-          <h1 class="logo">Singolo<span>*</span></h1>
-        </div>
-        <div class=top-menu>
-          <nav><a>Home</a></nav>
-          <nav><a>Service</a></nav>
-          <nav><a>Portfolio</a></nav>
-          <nav><a>About</a></nav>
-          <nav><a>Contact</a></nav>
-        </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Singolo. Part 1</title>
+    <link rel="stylesheet" href="./css/singolo1.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrapper">
+        <h1 class="logo-icon">
+          <a href="./singolo1.html">Singolo</a>
+        </h1>
+        <nav>
+          <div class="navigation">
+            <div class="navigation-item"><a href="./singolo1.html">Home</a></div>
+            <div class="navigation-item"><a href="#services">Services</a></div>
+            <div class="navigation-item"><a>Portfolio</a></div>
+            <div class="navigation-item"><a>About</a></div>
+            <div class="navigation-item"><a>Contact</a></div>
+          </div>
+        </nav>
       </div>
-      <div class="logo-bottom"></div>    
     </header>
-    <section class="slider">
-      <div class="slider-main-background">
-        <img class="left-arrow" src="./assets/chevleft.png"/>
-        <img class="iPhones" src="./assets/iPhones.png"/>
-        <img class="right-arrow" src="./assets/chevright.png"/>
-      </div>
-      <div class="slider-bottom-background "></div>
-    </section>
-    <section class="ourservice">
-      <div class="ourservice-main-background">
-        <header>Our Service</header>
-        <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimmentum. 
-        Duis mollis, non commodo luctus, nisi erat porttitor ligula,
-         eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-        <div class="items">
-          <section class="columns-3x">
-            <div class="item">
-              <img class="image-with-ellipse" src="assets/pen.png">
-              <div class="ourservice-item-header">Custom Design</div>
-              <div class="ourservice-item-text">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</div>
-            </div>
-            <div class="item">
-              <img class="image-with-ellipse" src="assets/phone.png">
-              <div class="ourservice-item-header">Responsive Layout</div>
-              <div class="ourservice-item-text">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Praesent elit leo.</div>
-            </div>          
-          </section>
-          <section class="columns-3x">
-            <div class="item">
-              <img class="image-with-ellipse" src="assets/bulb.png">
-              <div class="ourservice-item-header">Inovative Ideas</div>
-              <div class="ourservice-item-text">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</div>
-            </div>
-            <div class="item">
-              <img class="image-with-ellipse" src="assets/bubble.png">
-              <div class="ourservice-item-header">24/7 Support</div>
-              <div class="ourservice-item-text">Vivamus vel quam lacinia, tincidunt dui non, vehicala nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem.</div>
-            </div>            
-          </section>
-          <section class="columns-3x">
-            <div class="item">
-              <img class="image-with-ellipse" src="assets/heart.png">
-              <div class="ourservice-item-header">Love Is The Ansver</div>
-              <div class="ourservice-item-text">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</div>
-            </div>
-            <div class="item">
-              <img class="image-with-ellipse" src="assets/star.png">
-              <div class="ourservice-item-header">Feel Like A Star</div>
-              <div class="ourservice-item-text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.</div>
-            </div>
-          </section>    
+    <section class="section-slider">
+      <div class="wrapper">
+        <div class="slider">
+          <img class="left-arrow" src="./assets/chevleft.png" alt="left-arrow">
+          <img class="vertical-Phone" src="./assets/verticalPhone.png" alt="iPhone">
+          <img class="horizontal-Pnone" src="./assets/horizontalPhone.png" alt="iPhone2">
+          <img class="right-arrow" src="./assets/chevright.png" alt="right-arrow">
         </div>
       </div>
-      <div class="ourservice-bottom-background"></div>
     </section>
-  </div>
-</body>
+    <section class="section-services" id="services">
+      <div class="wrapper">
+        <div class="header-services">
+          <h2 class="header-services-title">Our Services</h2>
+          <p class="header-services-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
+            Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce
+            dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        </div>
+        <div class="services-items">
+          <div class="services-item">
+            <div class="services-ellipse-border">
+              <img width="32" height="32" src="./assets/pen.png" alt="Pen">
+            </div>
+            <span class="services-item-title">Custom Design</span>
+            <span class="services-item-description">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam
+              laoreet, viverra lacus ut, ultrices velit.</span>
+          </div>
+          <div class="services-item">
+            <div class="services-ellipse-border">
+              <img width="22" height="32" src="./assets/bulb.png" alt="Bulb">
+            </div>
+            <span class="services-item-title">Inovative Ideas</span>
+            <span class="services-item-description">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus,
+              nec rutrum tellus dolor id lorem.</span>
+          </div>
+          <div class="services-item">
+            <div class="services-ellipse-border">
+              <img width="32" height="28" src="./assets/heart.png" alt="Heart">
+            </div>
+            <span class="services-item-title">Love Is The Answer</span>
+            <span class="services-item-description">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et
+              consequat felis. Quisque condimentum.</span>
+          </div>
+          <div class="services-item">
+            <div class="services-ellipse-border">
+              <img width="22" height="32" src="./assets/phone.png" alt="Phone">
+            </div>
+            <span class="services-item-title">Responsive Layout</span>
+            <span class="services-item-description">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit
+              nunc ligula. Praesent elit leo.</span>
+          </div>
+          <div class="services-item">
+            <div class="services-ellipse-border">
+              <img width="32" height="28" src="./assets/bubble.png" alt="Bubble">
+            </div>
+            <span class="services-item-title">24 / 7 Support</span>
+            <span class="services-item-description">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a
+              sem erat. Pellentesque egestas venenatis lorem .</span>
+          </div>
+          <div class="services-item">
+            <div class="services-ellipse-border">
+              <img width="32" height="31" src="./assets/star.png" alt="Star">
+            </div>
+            <span class="services-item-title">Feel Like A Star</span>
+            <span class="services-item-description">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh.
+              Fusce vitae aliquam tellus.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
