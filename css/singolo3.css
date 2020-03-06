@@ -175,3 +175,35 @@ body {
   background-size: 13px;
   background-position: 1px;
 }
+
+.bottom {
+  height: 76px;
+  background-color: #2d303a;  
+}
+
+.copyright {
+  margin-top: 32px;
+  font-size: 12px;
+  color: #666d89;
+}
+
+.social-media-icons {
+  display: flex;
+  margin-top: 20px;
+}
+
+.social-media-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-right: 8px;
+  border: 1px solid #666d89;
+  border-radius: 29px; 
+}
+
+.social-media-icon:hover {
+  background-color: #ffff;
+}
