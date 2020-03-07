@@ -1,0 +1,14 @@
+﻿* {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;  
+  text-transform: uppercase;
+}
+
+body {
+  min-width: 1020px;
+}
