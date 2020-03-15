@@ -115,4 +115,56 @@ window.onload = function() {
     let replaced = parent.replaceChild(items[newIndex], items[currentIndex]);
     parent.insertBefore(replaced, items[newIndex]);
   }
+
+  // Pop-up
+
+  const form = document.querySelector(".quote-form");
+  const popUp = document.querySelector(".pop-up");
+  const blocker = document.querySelector(".blocker");
+  const popUpText = popUp.querySelector(".pop-up-text");
+  const closeButton = popUp.querySelector(".pop-up-close");
+  const subject = form.querySelector("#input-subject");
+  const details = form.querySelector("#input-details");
+  const content = document.querySelector(".content");
+
+  document.addEventListener("click", (e) => {
+    if(e.target === blocker) {
+      closePopUp();
+    }
+  });
+
+  closeButton.addEventListener("click", () => {
+    closePopUp();
+  });  
+
+  function closePopUp() {
+    popUp.classList.remove("pop-up-open");
+    content.classList.remove("content-pop-up");
+  } 
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    setPopUp();
+  });
+
+  function setPopUp() {
+    let res = "Письмо отправлено<br>";
+
+    res += createRow("Тема: ", subject.value, "Без темы");
+    res += createRow("Описание: ", details.value, "Без описания");
+
+    popUpText.innerHTML = res;
+
+    openPopUp();
+  }
+
+  function createRow(title, value, defaultValue) {
+    let text = !value.length ? defaultValue : title.concat(value);
+    return text + "<br>";
+  }  
+
+  function openPopUp() {
+    popUp.classList.add("pop-up-open");
+    content.classList.add("content-pop-up");
+  }   
 }
