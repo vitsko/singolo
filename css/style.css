@@ -11,10 +11,22 @@ a {
 
 body {
   min-width: 1020px;
+  --header-height: 95px;
+}
+
+:target::before {
+  display: block;
+  height: var(--header-height);
+  margin: calc(var(--header-height) * -1) 0 0;
+  visibility: hidden;
+  content: "";
 }
 
 .top {
-  height: 95px;
+  position:fixed;
+  width: 100%;
+  height: var( --header-height);
+  z-index:1;  
   box-sizing: border-box;
   border-bottom: 6px solid #323746;
   background-color: #2d303a;  
@@ -66,43 +78,119 @@ body {
   color: #494e62;
 }
 
-.navigation-item a:hover {
+.navigation-item-link:hover,
+.navigation-item-link-selected
+ {
   color: #f06c64;
 }
 
 .section-slider {
-  height: 600px;
-  box-sizing: border-box;
-  border-bottom: 5px solid #ea676b;
-  background-color: #f06c64;  
+  height: calc(600px + var(--header-height));
+  box-sizing: border-box; 
+}
+
+.section-slider-red {
+  background-color: #f06c64;
+  border-bottom: 5px solid #ea676b;  
+}
+
+.section-slider-blue {
+  background-color: #648BF0;
+  border-bottom: 5px solid #5C85EF; 
 }
 
 .slider {
   position: relative;
 }
 
-.left-arrow{
+.slider-button {
+  width: 16px;
+  height: 27px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  background: none;
+  transition: filter 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.slider-button:hover {
+  filter: brightness(80%);
+  transform: scale(1.5);
+}
+
+.previous-button{
   position: absolute;
-  top: 285px;
+  top: calc(285px + var(--header-height));
+  background-image: url("../assets/chevleft.png");
   cursor: pointer;
 }
 
-.vertical-Phone {
+.slide {
+  display: none;
+  height: 500px;  
+  opacity: 0;
+}
+
+.slide-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  opacity: 1;
+}
+
+.phone {
+  background-repeat: no-repeat;
+}
+
+.vertical-phone {
   position: absolute;
   left: 70px;
-  top: -16px;
+  top: calc(-16px + var(--header-height) * 1.7);
+  width: 240px;
+  height: 483px;
+  padding-right: 20px;
+  background-image: url("../assets/phone-vertical.svg"),
+                    url("../assets/phone-vertical-shadow.png");
+                  
 }
 
-.horizontal-Pnone {
-  position: relative;
-  left: 320px;
-  top: 70px;
-}
-
-.right-arrow {
+.vertical-phone-display {
   position: absolute;
-  top: 283px;
+  top: 13.5%;
+  left: 14px;
+}
+
+.horizontal-phone {
+  position: relative;
+  left: 370px;
+  top: calc(70px + var(--header-height) * 0.75);
+  width: 483px;
+  height: 240px; 
+  background-image: url("../assets/phone-horizontal.svg"),
+                    url("../assets/phone-horizontal-shadow.png");
+}
+
+.horizontal-phone-display {
+  position: absolute;
+  top: 14px;
+  left: 12.5%;
+}
+
+.turn-off .display {
+  opacity: 0;
+}
+
+.slide2-img {
+  position: absolute;
+  top: calc(var(--header-height) * 1.5);
+  left: 22%;
+}
+
+.next-button {
+  position: absolute;
+  top: calc(283px + var(--header-height));
   right: 0px;
+  background-image: url("../assets/chevright.png");
   cursor: pointer;
 }
 
@@ -215,7 +303,7 @@ body {
   border-color: #ffff;
 }
 
-.filter-selected-input {
+.filter-input-button-selected {
   border-color: rgb(200, 200, 200);
   color: #ffff;
 }
@@ -225,12 +313,19 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 20px; 
-  overflow: hidden;
-  margin-top: 19px;
+  margin-top: 19px; 
+}
+
+.portfolio-image-selected {
+  outline: 5px solid #F06C64;
 }
 
 .portfolio-image {
   display: block;
+  width: 220px;
+  height: 187px;
+  box-sizing: border-box;  
+  cursor: pointer;   
 }
 
 .about-us {
@@ -450,4 +545,60 @@ body {
 
 .footer-social-media-icons {
   margin-top: 20px;
+}
+
+.pop-up {
+  position: relative;
+  z-index: -1;  
+  opacity: 0; 
+  transition: opacity 0.3s ease-out,
+              z-index 0.3s step-end;
+}
+
+.pop-up-open {
+  z-index: 1; 
+  opacity: 1; 
+  transition: opacity 0.3s ease-out,
+              z-index 0.3s step-start;
+}
+
+.blocker {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000; 
+  width: 100%;
+  height: 100%; 
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.pop-up-form {
+  position: fixed;
+  z-index: 1001;
+  left: 50%;
+  top: 50%;
+  padding: 40px; 
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.39);
+  border-radius: 5px;
+}
+
+.pop-up-text {
+  margin-bottom: 10px;
+}
+
+.pop-up-close {
+  height: 38px;  
+  width: 100%; 
+  padding: 5px;   
+  text-transform: uppercase;
+  color: black;
+  font-weight: bold;  
+  border: none;
+  background: greenyellow;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
 }

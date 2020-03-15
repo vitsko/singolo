@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,34 +8,47 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/fonts.css">
 </head>
-<body>
+
+<body class="content">
+  <div id="home"></div>
   <header class="top">
     <div class="wrapper">
       <h1 class="logo-icon">
-        <a href="./index.html">Singolo</a>
+        <a href="#">Singolo</a>
       </h1>
       <nav>
         <div class="navigation">
-          <div class="navigation-item"><a href="./index.html">Home</a></div>
-          <div class="navigation-item"><a href="#services">Services</a></div>
-          <div class="navigation-item"><a href="#portfolio">Portfolio</a></div>
-          <div class="navigation-item"><a href="#about-us">About</a></div>
-          <div class="navigation-item"><a href="#quote">Contact</a></div>
+          <div class="navigation-item"><a class="navigation-item-link navigation-item-link-selected"
+              href="#home">Home</a></div>
+          <div class="navigation-item"><a class="navigation-item-link" href="#services">Services</a></div>
+          <div class="navigation-item"><a class="navigation-item-link" href="#portfolio">Portfolio</a></div>
+          <div class="navigation-item"><a class="navigation-item-link" href="#about-us">About</a></div>
+          <div class="navigation-item"><a class="navigation-item-link" href="#quote">Contact</a></div>
         </div>
       </nav>
     </div>
   </header>
-  <section class="section-slider">
+  <section class="section-slider section-slider-red">
     <div class="wrapper">
       <div class="slider">
-        <img class="left-arrow" src="./assets/chevleft.png" alt="left-arrow">
-        <img class="vertical-Phone" src="./assets/verticalPhone.png" alt="iPhone">
-        <img class="horizontal-Pnone" src="./assets/horizontalPhone.png" alt="iPhone2">
-        <img class="right-arrow" src="./assets/chevright.png" alt="right-arrow">
+        <button class="slider-button previous-button" title="Previous slide"></button>
+        <div class="slide slide-selected">
+          <div class="phone vertical-phone">
+            <img class="display vertical-phone-display" src="./assets/phone-vertical-display.png" alt="iPhone">
+          </div>
+          <div class="phone horizontal-phone">
+            <img class="display horizontal-phone-display" src="./assets/phone-horizontal-display.png" alt="iPhone">
+          </div>
+        </div>
+        <div class="slide">
+          <img class="slide2-img" src="./assets/slider-2.svg" alt="slider2-phones" />
+        </div>
+        <button class="slider-button next-button" title="Next slide"></button>
       </div>
     </div>
   </section>
-  <section class="section-services" id="services">
+  <div id="services"></div>
+  <section class="section-services">
     <div class="wrapper">
       <div class="section-header">
         <h2 class="section-title title-color">Our Services</h2>
@@ -95,7 +109,8 @@
       </div>
     </div>
   </section>
-  <section class="portfolio section" id="portfolio">
+  <div id="portfolio"></div>
+  <section class="portfolio section">
     <div class="wrapper">
       <div class="section-header">
         <h2 class="section-title title-color">Portfolio</h2>
@@ -104,7 +119,7 @@
           odio sem nec elit.</p>
       </div>
       <div class="portfolio-filter">
-        <input class="filter-input-button filter-selected-input" value="All" type="button">
+        <input class="filter-input-button filter-input-button-selected" value="All" type="button">
         <input class="filter-input-button" value="Web Design" type="button">
         <input class="filter-input-button" value="Graphic Design" type="button">
         <input class="filter-input-button" value="Artwork" type="button">
@@ -149,7 +164,8 @@
       </div>
     </div>
   </section>
-  <section class="about-us section" id="about-us">
+  <div id="about-us"></div>
+  <section class="about-us section">
     <div class="wrapper">
       <div class="section-header">
         <h2 class="section-title title-color" id="about">About Us</h2>
@@ -246,7 +262,8 @@
       </div>
     </div>
   </section>
-  <section class="section quote" id="quote">
+  <div id="quote"></div>
+  <section class="section quote">
     <div class="wrapper">
       <header class="quote-header-text-color">
         <div class="section-header">
@@ -306,5 +323,14 @@
       </div>
     </div>
   </footer>
+  <div class="pop-up">
+    <div class="blocker"></div>
+    <div class="pop-up-form">
+      <p class="pop-up-text"></p>
+      <button class="pop-up-close button">Ok</button>
+    </div>
+  </div>
+  <script src="./script.js"></script>
 </body>
+
 </html>
