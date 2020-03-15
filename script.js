@@ -72,4 +72,12 @@ window.onload = function() {
   sliderNextButton.addEventListener("click", () => {
     nextSlide();
   });
+
+  const phones = document.querySelectorAll('.phone');
+
+  phones.forEach((phone) => {
+    phone.addEventListener("click", () => {
+      phone.classList.toggle("turn-off");
+    });
+  });
 }

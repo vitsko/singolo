@@ -176,6 +176,10 @@ body {
   left: 12.5%;
 }
 
+.turn-off .display {
+  opacity: 0;
+}
+
 .slide2-img {
   position: absolute;
   top: calc(var(--header-height) * 1.5);
