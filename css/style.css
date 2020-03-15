@@ -303,7 +303,7 @@ body {
   border-color: #ffff;
 }
 
-.filter-selected-input {
+.filter-input-button-selected {
   border-color: rgb(200, 200, 200);
   color: #ffff;
 }
@@ -313,12 +313,19 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 20px; 
-  overflow: hidden;
-  margin-top: 19px;
+  margin-top: 19px; 
+}
+
+.portfolio-image-selected {
+  outline: 5px solid #F06C64;
 }
 
 .portfolio-image {
   display: block;
+  width: 220px;
+  height: 187px;
+  box-sizing: border-box;  
+  cursor: pointer;   
 }
 
 .about-us {

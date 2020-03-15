@@ -1,7 +1,6 @@
 window.onload = function() {
 
-  // Navigation bar
-
+  // Common function
   function selectMe(mainClass, container, target) {
     const addedClass = mainClass.concat("-selected");
 
@@ -14,6 +13,7 @@ window.onload = function() {
     }
   }
 
+  // Navigation bar
   const navigation = document.querySelector(".navigation");
   const navigationLinkClass = "navigation-item-link";
   const navigationLinks = navigation.querySelectorAll(".".concat(navigationLinkClass));
@@ -22,10 +22,27 @@ window.onload = function() {
     selectMe(navigationLinkClass, navigationLinks, e.target);
   });
 
-  // Section-slider
+  // Section of slider
 
   const slider = document.querySelector(".section-slider");
   const slides = slider.querySelectorAll(".slide");
+
+  function previousSlide() {
+    let index = sliderReset() - 1;
+
+    if(index < 0) {
+      index = slides.length - 1;
+    }
+
+    slides[index].classList.add("slide-selected");
+    setSlideBackground(index);
+  }
+
+  function nextSlide() {
+    let index = (sliderReset() + 1) % slides.length;
+    slides[index].classList.add("slide-selected");
+    setSlideBackground(index);
+  }
 
   function sliderReset() {
     let index = 0;
@@ -45,23 +62,6 @@ window.onload = function() {
     slider.classList.toggle("section-slider-blue", slideIndex === 1);
   }
 
-  function previousSlide() {
-    let index = sliderReset() - 1;
-
-    if(index < 0) {
-      index = slides.length - 1;
-    }
-
-    slides[index].classList.add("slide-selected");
-    setSlideBackground(index);
-  }
-
-  function nextSlide() {
-    let index = (sliderReset() + 1) % slides.length;
-    slides[index].classList.add("slide-selected");
-    setSlideBackground(index);
-  }
-
   const sliderPreviousButton = document.querySelector(".previous-button");
   const sliderNextButton = document.querySelector(".next-button");
 
@@ -73,11 +73,46 @@ window.onload = function() {
     nextSlide();
   });
 
-  const phones = document.querySelectorAll('.phone');
+  const phones = document.querySelectorAll(".phone");
 
   phones.forEach((phone) => {
     phone.addEventListener("click", () => {
       phone.classList.toggle("turn-off");
     });
   });
+
+  // Section of portfolio  
+
+  const portfolio = document.querySelector('.portfolio-items');
+  const portfolioImageClass = "portfolio-image";
+  const portfolioImages = portfolio.querySelectorAll('.'.concat(portfolioImageClass));
+
+  portfolio.addEventListener("click", (e) => {
+    selectMe(portfolioImageClass, portfolioImages, e.target);
+  });
+
+  const filter = document.querySelector(".portfolio-filter");
+  const filterButtonClass = "filter-input-button";
+  const filterItems = filter.querySelectorAll('.'.concat(filterButtonClass));
+
+
+  filter.addEventListener("click", (e) => {
+    selectMe(filterButtonClass, filterItems, e.target);
+
+    const portfolioItems = portfolio.querySelectorAll(".portfolio-item");
+    shiftBlocks(portfolioItems);
+  });
+
+  function shiftBlocks(blocks) {
+    for(let i = blocks.length - 1; i >= 1; --i) {
+      let newIndex = Math.floor(Math.random() * i);
+      swapNodes(blocks, i, newIndex);
+    }
+  } 
+
+  function swapNodes(items, currentIndex, newIndex) {
+    let parent = items[currentIndex].parentNode;
+    let replaced = parent.replaceChild(items[newIndex], items[currentIndex]);
+    parent.insertBefore(replaced, items[newIndex]);
+  }
 }
