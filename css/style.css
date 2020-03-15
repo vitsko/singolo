@@ -138,16 +138,42 @@ body {
   opacity: 1;
 }
 
-.vertical-Phone {
-  position: absolute;
-  left: 70px;
-  top: calc(-16px + var(--header-height));
+.phone {
+  background-repeat: no-repeat;
 }
 
-.horizontal-Pnone {
+.vertical-phone {
+  position: absolute;
+  left: 70px;
+  top: calc(-16px + var(--header-height) * 1.7);
+  width: 240px;
+  height: 483px;
+  padding-right: 20px;
+  background-image: url("../assets/phone-vertical.svg"),
+                    url("../assets/phone-vertical-shadow.png");
+                  
+}
+
+.vertical-phone-display {
+  position: absolute;
+  top: 13.5%;
+  left: 14px;
+}
+
+.horizontal-phone {
   position: relative;
-  left: 320px;
-  top: calc(70px + var(--header-height) * 1.4);
+  left: 370px;
+  top: calc(70px + var(--header-height) * 0.75);
+  width: 483px;
+  height: 240px; 
+  background-image: url("../assets/phone-horizontal.svg"),
+                    url("../assets/phone-horizontal-shadow.png");
+}
+
+.horizontal-phone-display {
+  position: absolute;
+  top: 14px;
+  left: 12.5%;
 }
 
 .slide2-img {
