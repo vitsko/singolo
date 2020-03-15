@@ -86,19 +86,56 @@ body {
 
 .section-slider {
   height: calc(600px + var(--header-height));
-  box-sizing: border-box;
-  border-bottom: 5px solid #ea676b;
-  background-color: #f06c64;  
+  box-sizing: border-box; 
+}
+
+.section-slider-red {
+  background-color: #f06c64;
+  border-bottom: 5px solid #ea676b;  
+}
+
+.section-slider-blue {
+  background-color: #648BF0;
+  border-bottom: 5px solid #5C85EF; 
 }
 
 .slider {
   position: relative;
 }
 
-.left-arrow{
+.slider-button {
+  width: 16px;
+  height: 27px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  background: none;
+  transition: filter 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.slider-button:hover {
+  filter: brightness(80%);
+  transform: scale(1.5);
+}
+
+.previous-button{
   position: absolute;
   top: calc(285px + var(--header-height));
+  background-image: url("../assets/chevleft.png");
   cursor: pointer;
+}
+
+.slide {
+  display: none;
+  height: 500px;  
+  opacity: 0;
+}
+
+.slide-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  opacity: 1;
 }
 
 .vertical-Phone {
@@ -110,13 +147,20 @@ body {
 .horizontal-Pnone {
   position: relative;
   left: 320px;
-  top: calc(70px + var(--header-height));
+  top: calc(70px + var(--header-height) * 1.4);
 }
 
-.right-arrow {
+.slide2-img {
+  position: absolute;
+  top: calc(var(--header-height) * 1.5);
+  left: 22%;
+}
+
+.next-button {
   position: absolute;
   top: calc(283px + var(--header-height));
   right: 0px;
+  background-image: url("../assets/chevright.png");
   cursor: pointer;
 }
 

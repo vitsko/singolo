@@ -6,7 +6,7 @@
   <title>Singolo</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/fonts.css">
-  </head>
+</head>
 <body>
   <div id="home"></div>
   <header class="top">
@@ -16,7 +16,8 @@
       </h1>
       <nav>
         <div class="navigation">
-          <div class="navigation-item"><a class="navigation-item-link navigation-item-link-selected" href="#home">Home</a></div>
+          <div class="navigation-item"><a class="navigation-item-link navigation-item-link-selected"
+              href="#home">Home</a></div>
           <div class="navigation-item"><a class="navigation-item-link" href="#services">Services</a></div>
           <div class="navigation-item"><a class="navigation-item-link" href="#portfolio">Portfolio</a></div>
           <div class="navigation-item"><a class="navigation-item-link" href="#about-us">About</a></div>
@@ -24,14 +25,19 @@
         </div>
       </nav>
     </div>
-  </header> 
-  <section class="section-slider">
+  </header>
+  <section class="section-slider section-slider-red">
     <div class="wrapper">
       <div class="slider">
-        <img class="left-arrow" src="./assets/chevleft.png" alt="left-arrow">
-        <img class="vertical-Phone" src="./assets/verticalPhone.png" alt="iPhone">
-        <img class="horizontal-Pnone" src="./assets/horizontalPhone.png" alt="iPhone2">
-        <img class="right-arrow" src="./assets/chevright.png" alt="right-arrow">
+        <button class="slider-button previous-button" title="Previous slide"></button>
+        <div class="slide slide-selected">
+          <img class="vertical-Phone" src="./assets/verticalPhone.png" alt="iPhone">
+          <img class="horizontal-Pnone" src="./assets/horizontalPhone.png" alt="iPhone2">
+        </div>
+        <div class="slide">
+          <img class="slide2-img" src="./assets/slider-2.svg" alt="slider2-phones" />
+        </div>
+        <button class="slider-button next-button" title="Next slide"></button>
       </div>
     </div>
   </section>
