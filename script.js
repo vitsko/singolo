@@ -148,10 +148,10 @@ window.onload = function() {
   });
 
   function setPopUp() {
-    let res = "Письмо отправлено<br>";
+    let res = "<h1>Письмо отправлено</h1><br>";
 
-    res += createRow("Тема: ", subject.value, "Без темы");
-    res += createRow("Описание: ", details.value, "Без описания");
+    res += createRow("<h2>Тема:</h2> ", subject.value, "<h2>Без темы</h2>");
+    res += createRow("<h2>Описание:</h2> ", details.value, "<h2>Без описания</h2>");
 
     popUpText.innerHTML = res;
 
