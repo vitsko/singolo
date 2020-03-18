@@ -156,6 +156,13 @@ window.onload = function () {
   function closePopUp() {
     popUp.classList.remove("pop-up-open");
     content.classList.remove("content-pop-up");
+    formReset();
+  }
+
+  function formReset() {
+    document.querySelectorAll(".quote-form .input-text").forEach((input) => {
+      input.value="";
+    });
   }
 
   form.addEventListener("submit", (e) => {
@@ -166,8 +173,8 @@ window.onload = function () {
   function setPopUp() {
     let res = "<h1>Письмо отправлено</h1><br>";
 
-    res += createRow("<h2>Тема:</h2> ", subject.value, "<h2>Без темы</h2>");
-    res += createRow("<h2>Описание:</h2> ", details.value, "<h2>Без описания</h2>");
+    res = res.concat(createRow("<h2>Тема:</h2> ", subject.value, "<h2>Без темы</h2>"));
+    res = res.concat(createRow("<h2>Описание:</h2> ", details.value, "<h2>Без описания</h2>"));
 
     popUpText.innerHTML = res;
 
@@ -175,7 +182,7 @@ window.onload = function () {
   }
 
   function createRow(title, value, defaultValue) {
-    let text = !value.length ? defaultValue : title.concat(value);
+    let text = !value.length ? defaultValue : title.concat("<div class='pop-up-text-content'>".concat(value).concat("</div>"));
     return text + "<br>";
   }
 
