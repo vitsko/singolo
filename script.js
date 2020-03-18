@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
 
   // Common function
   function selectMe(mainClass, container, target) {
@@ -7,20 +7,36 @@ window.onload = function() {
     container.forEach((obj) => {
       obj.classList.remove(addedClass);
     });
-    
-    if(target.classList.contains(mainClass)) {
+
+    if (target.classList.contains(mainClass)) {
       target.classList.add(addedClass);
     }
   }
 
   // Navigation bar
-  const navigation = document.querySelector(".navigation");
-  const navigationLinkClass = "navigation-item-link";
-  const navigationLinks = navigation.querySelectorAll(".".concat(navigationLinkClass));
-  
-  navigation.addEventListener("click", (e) => {
-    selectMe(navigationLinkClass, navigationLinks, e.target);
+  document.addEventListener("scroll", () => {
+    onScroll()
   });
+
+  function onScroll() {
+    let navigationItems = document.querySelectorAll(".navigation-item-link");
+    let currentPosition = window.scrollY + 300;
+    let linkToHeader = document.querySelectorAll(".link-to-header");
+    let content = document.querySelectorAll(".link-to-header ~ section");
+
+    linkToHeader.forEach((link, index) => {
+      if (content[index].offsetTop <= currentPosition &&
+        content[index].offsetTop + content[index].offsetHeight > currentPosition) {
+        navigationItems.forEach((a) => {
+          a.classList.remove("navigation-item-link-selected");
+
+          if (link.getAttribute("id") === a.getAttribute("href").substring(1)) {
+            a.classList.add("navigation-item-link-selected");
+          }
+        });
+      }
+    });
+  }
 
   // Section of slider
 
@@ -30,7 +46,7 @@ window.onload = function() {
   function previousSlide() {
     let index = sliderReset() - 1;
 
-    if(index < 0) {
+    if (index < 0) {
       index = slides.length - 1;
     }
 
@@ -48,14 +64,14 @@ window.onload = function() {
     let index = 0;
 
     slides.forEach((element, elementIndex) => {
-      if(element.classList.contains("slide-selected")) {
+      if (element.classList.contains("slide-selected")) {
         index = elementIndex;
         element.classList.remove("slide-selected");
       }
     });
 
     return index;
-  } 
+  }
 
   function setSlideBackground(slideIndex) {
     slider.classList.toggle("section-slider-red", slideIndex === 0);
@@ -104,11 +120,11 @@ window.onload = function() {
   });
 
   function shiftBlocks(blocks) {
-    for(let i = blocks.length - 1; i >= 1; --i) {
+    for (let i = blocks.length - 1; i >= 1; --i) {
       let newIndex = Math.floor(Math.random() * i);
       swapNodes(blocks, i, newIndex);
     }
-  } 
+  }
 
   function swapNodes(items, currentIndex, newIndex) {
     let parent = items[currentIndex].parentNode;
@@ -128,19 +144,19 @@ window.onload = function() {
   const content = document.querySelector(".content");
 
   document.addEventListener("click", (e) => {
-    if(e.target === blocker) {
+    if (e.target === blocker) {
       closePopUp();
     }
   });
 
   closeButton.addEventListener("click", () => {
     closePopUp();
-  });  
+  });
 
   function closePopUp() {
     popUp.classList.remove("pop-up-open");
     content.classList.remove("content-pop-up");
-  } 
+  }
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -161,10 +177,10 @@ window.onload = function() {
   function createRow(title, value, defaultValue) {
     let text = !value.length ? defaultValue : title.concat(value);
     return text + "<br>";
-  }  
+  }
 
   function openPopUp() {
     popUp.classList.add("pop-up-open");
     content.classList.add("content-pop-up");
-  }   
+  }
 }
