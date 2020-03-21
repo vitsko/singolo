@@ -43,19 +43,46 @@ window.onload = function () {
   const slider = document.querySelector(".section-slider");
   const slides = slider.querySelectorAll(".slide");
 
+  const sliderPreviousButton = document.querySelector(".previous-button");
+  const sliderNextButton = document.querySelector(".next-button");
+
+  sliderPreviousButton.addEventListener("click", () => {
+    previousSlide();
+  });
+
+  sliderNextButton.addEventListener("click", () => {
+    nextSlide();
+  });
+
   function previousSlide() {
-    let index = sliderReset() - 1;
+    let previousIndex = sliderReset();
+    let index = previousIndex - 1;
 
     if (index < 0) {
       index = slides.length - 1;
     }
 
+    setAnimationToSlider(slides[index], { transform: 'translate(-100%)' }, { transform: 'translate(0)' }, 500, 'ease-in-out');
+    setAnimationToSlider(slides[previousIndex], { transform: 'translate(0)' }, { transform: 'translate(100%)' }, 500, 'ease-in-out');
     slides[index].classList.add("slide-selected");
     setSlideBackground(index);
   }
 
+  function setAnimationToSlider(target, from, to, duration, transitionTiming) {
+    target.animate([
+      { ...from },
+      { ...to },
+    ], {
+      duration: duration,
+      easing: transitionTiming
+    });
+  }
+
   function nextSlide() {
-    let index = (sliderReset() + 1) % slides.length;
+    let previousIndex = sliderReset();
+    let index = (previousIndex + 1) % slides.length;
+    setAnimationToSlider(slides[index], {transform: 'translate(100%)'}, {transform: 'translate(0)'}, 500, 'ease-in-out');
+    setAnimationToSlider(slides[previousIndex], {transform: 'translate(0)'}, {transform: 'translate(-100%)'}, 500, 'ease-in-out');
     slides[index].classList.add("slide-selected");
     setSlideBackground(index);
   }
@@ -77,17 +104,6 @@ window.onload = function () {
     slider.classList.toggle("section-slider-red", slideIndex === 0);
     slider.classList.toggle("section-slider-blue", slideIndex === 1);
   }
-
-  const sliderPreviousButton = document.querySelector(".previous-button");
-  const sliderNextButton = document.querySelector(".next-button");
-
-  sliderPreviousButton.addEventListener("click", () => {
-    previousSlide();
-  });
-
-  sliderNextButton.addEventListener("click", () => {
-    nextSlide();
-  });
 
   const phones = document.querySelectorAll(".phone");
 
@@ -161,7 +177,7 @@ window.onload = function () {
 
   function formReset() {
     document.querySelectorAll(".quote-form .input-text").forEach((input) => {
-      input.value="";
+      input.value = "";
     });
   }
 
