@@ -578,8 +578,7 @@ body {
   z-index: 1001;
   left: 50%;
   top: 50%;
-  height: 210px;
-  overflow: auto;
+  width: 400px;
   padding: 40px; 
   transform: translate(-50%, -50%);
   background-color: #ffffff;
@@ -588,7 +587,16 @@ body {
 }
 
 .pop-up-text {
-  margin-bottom: 10px;
+  height: 210px;
+  margin-bottom: 10px;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 22px;
+  word-wrap: break-word;
+}
+
+.pop-up-text-content {
+  margin: 10px 0 10px 0;  
 }
 
 .pop-up-close {
