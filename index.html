@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Singolo</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/fonts.css">
@@ -13,9 +14,11 @@
   <div class="link-to-header" id="home"></div>
   <header class="top">
     <div class="wrapper">
+      <button class="navigation-burger" title="Open menu"></button>
       <h1 class="logo-icon">
         <a href="#">Singolo</a>
       </h1>
+      <div class="navigation-shadow"></div>
       <nav>
         <div class="navigation">
           <div class="navigation-item"><a class="navigation-item-link navigation-item-link-selected"
@@ -30,21 +33,25 @@
   </header>
   <section class="section-slider section-slider-red">
     <div class="wrapper">
-      <div class="slider">
-        <button class="slider-button previous-button" title="Previous slide"></button>
+      <button class="slider-button previous-button" title="Previous slide"></button>
+      <div class="slides">
         <div class="slide slide-selected">
           <div class="phone vertical-phone">
-            <img class="display vertical-phone-display" src="./assets/phone-vertical-display.png" alt="iPhone">
+            <img class="phone-body" src="./assets/phone-vertical.svg" alt="phone-body">
+            <img class="phone-display" src="./assets/phone-vertical-display.png" alt="phone-vertical-display">
+            <img class="phone-shadow" src="./assets/phone-vertical-shadow.png" alt="phone-shadow">
           </div>
           <div class="phone horizontal-phone">
-            <img class="display horizontal-phone-display" src="./assets/phone-horizontal-display.png" alt="iPhone">
+            <img class="phone-body" src="./assets/phone-horizontal.svg" alt="phone-body">
+            <img class="phone-display" src="./assets/phone-horizontal-display.png" alt="phone-horizontal-display">
+            <img class="phone-shadow" src="./assets/phone-horizontal-shadow.png" alt="phone-shadow">            
           </div>
         </div>
         <div class="slide">
           <img class="slide2-img" src="./assets/slider-2.svg" alt="slider2-phones" />
         </div>
-        <button class="slider-button next-button" title="Next slide"></button>
       </div>
+      <button class="slider-button next-button" title="Next slide"></button>
     </div>
   </section>
   <div class="link-to-header" id="services"></div>
@@ -274,14 +281,15 @@
             cursus commodo, tortor mauris condimentum nibh.</p>
         </div>
       </header>
-      <div class="quote-form-section centering">
+      <div class="quote-form-section">
         <form class="quote-form" action="#" method="POST">
           <input class="input-text" id="input-name" type="text" name="name" placeholder="Name (Required)" required>
           <input class="input-text" id="input-email" type="email" name="email" placeholder="Email (Required)" required>
           <input class="input-text" id="input-subject" type="text" name="subject" placeholder="Subject">
           <textarea class="input-text details" id="input-details" name="details"
-            placeholder="Describe your project in detail...Limit 1000 characters" cols="40" rows="20" maxlength="1000"></textarea>
-          <input class="submit-button" type="submit" value="Submit">
+            placeholder="Describe your project in detail...Limit 1000 characters" cols="40" rows="20"
+            maxlength="1000"></textarea>
+          <input class="submit-button" type="submit" value="Send">
         </form>
         <div class="contact-information">
           <h3 class="contact-information-header">Contact Information</h3>
@@ -297,9 +305,9 @@
     </div>
   </section>
   <footer class="bottom">
-    <div class="wrapper centering">
-      <div class="copyright">&#169;Copyright 2013</div>
-      <div class="social-media-icons footer-social-media-icons">
+    <div class=" wrapper bottom-wrapper">
+      <div class="copyright">&#169; Copyright 2013</div>
+      <div class="social-media-icons">
         <div class="social-media-icon">
           <a href="https://www.facebook.com" target="_blank">
             <img class="social-media-icon-image" src="./assets/facebook.png" alt="facebook">

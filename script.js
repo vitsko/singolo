@@ -13,14 +13,27 @@ window.onload = function () {
     }
   }
 
+  function updateHeaderHeight() {
+    const style = getComputedStyle(document.body);
+
+    const big = style.getPropertyValue("--header-height-default-big");
+    const small = style.getPropertyValue("--header-height-default-small");
+
+    const root = document.querySelector(":root");
+    root.style.setProperty("--header-height", window.scrollY > 30 ? small : big);
+  }
+
+  window.addEventListener("resize", updateHeaderHeight);
+
   // Navigation bar
-  document.addEventListener("scroll", () => {
-    onScroll()
+  document.addEventListener("scroll", function() {
+    onScroll();
+    updateHeaderHeight();
   });
 
   function onScroll() {
     let navigationItems = document.querySelectorAll(".navigation-item-link");
-    let currentPosition = window.scrollY + 300;
+    let currentPosition = window.scrollY + 80;
     let linkToHeader = document.querySelectorAll(".link-to-header");
     let content = document.querySelectorAll(".link-to-header ~ section");
 
@@ -36,6 +49,47 @@ window.onload = function () {
         });
       }
     });
+  }
+
+  const navMenu = document.querySelector(".navigation");
+
+  navMenu.addEventListener("click", (e) => {
+    if(e.target.classList.contains("navigation-item-link")) {
+      switchMenu(false);
+    }
+  });
+  
+  const navShadow = document.querySelector(".navigation-shadow");
+
+  navShadow.addEventListener("click", (e) => {
+    switchMenu(false);
+  });
+
+  const burgerButton = document.querySelector(".navigation-burger");
+  
+  burgerButton.addEventListener("click", (e) => {
+    switchMenu();
+    e.stopPropagation();
+  });
+
+  function switchMenu (open) {
+    const navMenu = document.querySelector(".navigation");
+    const burgerButton = document.querySelector(".navigation-burger");
+    const headerLogo = document.querySelector(".logo-icon");
+    const navShadow = document.querySelector(".navigation-shadow");
+    
+    switchThis(navMenu, "navigation-display", open);
+    switchThis(burgerButton, "navigation-burger-display", open);
+    switchThis(headerLogo, "logo-icon-burger", open);
+    switchThis(navShadow, "navigation-shadow-display", open);
+  }
+  
+  function switchThis (selector, className, value) {
+    if(value !== undefined) {
+      selector.classList.toggle(className, value);
+    } else {
+      selector.classList.toggle(className);
+    }
   }
 
   // Section of slider
@@ -81,8 +135,8 @@ window.onload = function () {
   function nextSlide() {
     let previousIndex = sliderReset();
     let index = (previousIndex + 1) % slides.length;
-    setAnimationToSlider(slides[index], {transform: 'translate(100%)'}, {transform: 'translate(0)'}, 500, 'ease-in-out');
-    setAnimationToSlider(slides[previousIndex], {transform: 'translate(0)'}, {transform: 'translate(-100%)'}, 500, 'ease-in-out');
+    setAnimationToSlider(slides[index], { transform: 'translate(100%)' }, { transform: 'translate(0)' }, 500, 'ease-in-out');
+    setAnimationToSlider(slides[previousIndex], { transform: 'translate(0)' }, { transform: 'translate(-100%)' }, 500, 'ease-in-out');
     slides[index].classList.add("slide-selected");
     setSlideBackground(index);
   }
